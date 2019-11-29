@@ -20,18 +20,22 @@ Instructor Assigned Team #2 - Kiosk Simulation System - CS-3443-001-Fall-2019-Ap
 
 *you can create a new account and test it that way as a customer*
 ** USERNAME AND PASSWORDS ARE CASE SENSITIVE**
-*default Admin Testing 
-      Username =Admin
-      Password =Admin
-*default Employee Testing 
-      Username =employee
-      Password =employee
-*default Customer Testing 
-      Username =customer1
-      Password =customer1
-*another admin testing
-      Username =dkintx
-      Password =1234
+
+*default Admin Testing*
+Username =Admin
+Password =Admin
+
+*default Employee Testing*
+Username =employee
+Password =employee
+
+*default Customer Testing*
+Username =customer1
+Password =customer1
+
+*another admin testing*
+Username =dkintx
+Password =1234
 
 *all account information is stored in Account.txt*
 *same goes for products in Product.txt*
@@ -61,18 +65,22 @@ Instructor Assigned Team #2 - Kiosk Simulation System - CS-3443-001-Fall-2019-Ap
 
 *you can create a new account and test it that way as a customer*
 ** USERNAME AND PASSWORDS ARE CASE SENSITIVE**
-*default Admin Testing 
-      Username =Admin
-      Password =Admin
-*default Employee Testing 
-      Username =employee
-      Password =employee
-*default Customer Testing 
-      Username =customer1
-      Password =customer1
-*another admin testing
-      Username =dkintx
-      Password =1234
+
+*default Admin Testing*
+Username =Admin
+Password =Admin
+
+*default Employee Testing*
+Username =employee
+Password =employee
+
+*default Customer Testing*
+Username =customer1
+Password =customer1
+
+*another admin testing*
+Username =dkintx
+Password =1234
 
 *all account information is stored in Account.txt*
 *same goes for products in Product.txt*
