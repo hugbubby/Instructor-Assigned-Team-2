@@ -1,1 +1,0 @@
-pszName,description,iId,iStockCount,fPrice
