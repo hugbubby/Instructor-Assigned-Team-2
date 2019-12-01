@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="800.0" prefWidth="800.0"
+            xmlns="http://javafx.com/javafx/2.2" fx:controller="application.controller.LoginController">
+    <!-- TODO Add Nodes -->
+    <Button fx:id="buttonLogin" layoutX="325.0" layoutY="523.0" mnemonicParsing="false" onAction="#loginClicked"
+            prefHeight="50.0" prefWidth="150.0" text="Login"/>
+    <Button id="buttonCreateNewAccount" fx:id="buttonCreateNewAccountPrompt" layoutX="325.0" layoutY="585.0"
+            mnemonicParsing="false" onAction="#createNewAccountPromptClicked" prefHeight="50.0" prefWidth="150.0"
+            text="Create New Account"/>
+    <Label layoutX="144.0" layoutY="339.0" text="Username:">
+        <font>
+            <Font size="24.0" fx:id="x1"/>
+        </font>
+    </Label>
+    <Label font="$x1" layoutX="150.0" layoutY="378.0" text="Password:"/>
+    <PasswordField fx:id="passFieldPassword" layoutX="300.0" layoutY="388.0" prefWidth="200.0" promptText="Password"
+    />
+    <TextField fx:id="textFieldUsername" layoutX="300.0" layoutY="349.0" prefWidth="200.0" promptText="Username"/>
+    <Button fx:id="buttonCreateNewAccount" layoutX="325.0" layoutY="463.0" mnemonicParsing="false"
+            onAction="#createNewAccountClicked" prefHeight="50.0" prefWidth="150.0" text="Create New Account"
+            visible="false"/>
+    <Button id="buttonLogin" fx:id="buttonBack" layoutX="14.0" layoutY="736.0" mnemonicParsing="false"
+            onAction="#buttonBackClicked" prefHeight="50.0" prefWidth="150.0" text="Back" visible="false"/>
+    <Label fx:id="labelLoginError" alignment="CENTER" layoutX="250.0" layoutY="423.0" prefWidth="300.0"
+           textFill="RED">
+        <font>
+            <Font size="14.0"/>
+        </font>
+    </Label>
+</AnchorPane>

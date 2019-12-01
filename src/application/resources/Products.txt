@@ -1,0 +1,6 @@
+Chair,chair,1,10,20.00
+Arm Chair,armchair chair,2,10,35.00
+Bed,bed,3,10,300.00
+Desk,desk,4,10,115.00
+Table,table,5,10,150.00
+Dinning Table,dinningtable table,6,10,200.00
