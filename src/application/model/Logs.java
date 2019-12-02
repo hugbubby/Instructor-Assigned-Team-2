@@ -2,9 +2,7 @@ package application.model;
 
 import application.Main;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -22,19 +20,26 @@ public class Logs {
      */
     public Logs() {
         //read from Accounts.txt file and load all Accounts
+        Scanner accountsBuffer;
         try {
-            Scanner accountsBuffer = new Scanner(Main.class.getResourceAsStream("resources/Accounts.txt"));
-            while (accountsBuffer.hasNext()) {
-                String[] tempAccount = accountsBuffer.nextLine().split("[,]");
-                //tempAccount[0] = id
-                //tempAccount[1] = type
-                //tempAccount[2] = username
-                //tempAccount[3] = password
-                Account accountLoad = new Account(Integer.parseInt(tempAccount[0]), Integer.parseInt(tempAccount[1]), tempAccount[2], tempAccount[3]);
-                alLogs.add(accountLoad);
+            accountsBuffer = new Scanner(new File("Accounts.txt"));
+        } catch (FileNotFoundException e) {
+            try {
+                new FileOutputStream("Accounts.txt", false).close();
+            } catch (IOException ex) {
+                ex.printStackTrace();
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("WARNING: NO ACCOUNTS AVAILABLE. You will not be able to log in.");
+            return;
+        }
+        while (accountsBuffer.hasNext()) {
+            String[] tempAccount = accountsBuffer.nextLine().split("[,]");
+            //tempAccount[0] = id
+            //tempAccount[1] = type
+            //tempAccount[2] = username
+            //tempAccount[3] = password
+            Account accountLoad = new Account(Integer.parseInt(tempAccount[0]), Integer.parseInt(tempAccount[1]), tempAccount[2], tempAccount[3]);
+            alLogs.add(accountLoad);
         }
     }
 

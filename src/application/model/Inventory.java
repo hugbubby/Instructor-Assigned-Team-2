@@ -1,8 +1,7 @@
 package application.model;
 
-import application.Main;
-
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -31,7 +30,7 @@ public class Inventory {
     public Inventory() {
         //read from Products file
         try {
-            Scanner productsBuffer = new Scanner(Main.class.getResourceAsStream("resources/Products.txt"));
+            Scanner productsBuffer = new Scanner(new File("Products.txt"));
             while (productsBuffer.hasNext()) {
                 String[] tempProduct = productsBuffer.nextLine().split("[,]");
                 //tempProduct[0] = Name
@@ -163,7 +162,7 @@ public class Inventory {
         String str = name + "," + description + "," + id.toString() + "," + stockCount + "," + price + "0";
         BufferedWriter writer;
         try {
-            writer = new BufferedWriter(new FileWriter(Main.class.getResource("resources/Products.txt").getFile()));
+            writer = new BufferedWriter(new FileWriter(new File("Products.txt")));
             writer.append("\n");
             writer.append(str);
             writer.close();
@@ -191,7 +190,7 @@ public class Inventory {
         //read from Products file
         int line = 1;
         try {
-            Scanner productsBuffer = new Scanner(Main.class.getResourceAsStream("resources/Products.txt"));
+            Scanner productsBuffer = new Scanner(new File("Products.txt"));
             while (line < id) {
                 productsBuffer.nextLine();
                 line++;
@@ -216,7 +215,7 @@ public class Inventory {
             //setup new string for entire file with changed line
             StringBuilder strFile = new StringBuilder();
             line = 1;
-            Scanner fileBuffer = new Scanner(Main.class.getResourceAsStream("resources/Products.txt"));
+            Scanner fileBuffer = new Scanner(new File("Products.txt"));
             while (fileBuffer.hasNext()) {
                 //change the line with Product to new strLine
                 if (line == id) {
@@ -234,7 +233,7 @@ public class Inventory {
             //write new string file into Products file
             BufferedWriter writer;
             try {
-                writer = new BufferedWriter(new FileWriter(Main.class.getResource("resources/Products.txt").getFile()));
+                writer = new BufferedWriter(new FileWriter(new File("Products.txt")));
                 writer.write(strFile.toString());
                 writer.close();
             } catch (IOException e1) {
