@@ -15,13 +15,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
 
-/*		Login Class
- *
- * 		Purpose:
- *
- * 		Notes:
- *
- *
+/**
+ * Controller class that handles the events associated with the Login page.
  */
 public class LoginController {
 
@@ -39,27 +34,16 @@ public class LoginController {
     //labels
     @FXML javafx.scene.control.Label labelLoginError;
 
-
-    //Constructors
-    /*
-     * Purpose:
-     *
-     * Notes:
-     *
-     */
     public LoginController() {
     }
 
     //Methods
-    /*
-     * Purpose:
-     * 	Handles event for when login button is clicked (loads Accounts)
-     * Parameters:
-     * 	I - Event event							button clicked
-     * Returns:
-     * 	void
-     * Notes:
-     * 	Logs user in (will load Kiosk)
+
+    /**
+     * Verifies that the given username and password are valid.
+     * If so, it changes the current view to the Kiosk, Admin, or Employee page based on the given input.
+     *
+     * @param event The Login button is clicked.
      */
     public void loginClicked(Event event) {
         if (textFieldUsername.getText().equals("") || passFieldPassword.getText().equals("")) {
@@ -129,16 +113,11 @@ public class LoginController {
         }
     }
 
-    /*
-     * Purpose:
-     * 	Creation of new Account for a customer (loads Accounts)
-     * Parameters:
-     * 	I - Event event							button clicked
-     * Returns:
-     * 	void
-     * Notes:
-     * 	Will automatically login after creation
-     * changes files
+    /**
+     * Creates a new account based on the username and password that the new user enters.
+     * Verifies that the data is valid and that it doesn't match that of an existing account.
+     *
+     * @param event The "Create New Account" button on the account creation page is clicked.
      */
     public void createNewAccountClicked(Event event) {
 
@@ -172,15 +151,10 @@ public class LoginController {
         }
     }
 
-    /*
-     * Purpose:
-     * 	Prompt for the user if they are new
-     * Parameters:
-     * 	I - Event event							button clicked
-     * Returns:
-     * 	void
-     * Notes:
-     * 	Handles view to show account creation is user is new
+    /**
+     * Prompt for new users; directs them to the account creation page.
+     *
+     * @param event The "Create New Account Prompt" button on the Login page is clicked.
      */
     public void createNewAccountPromptClicked(Event event) {
         //make login prompt buttons invisible
@@ -191,15 +165,10 @@ public class LoginController {
         buttonBack.visibleProperty().setValue(true);
     }
 
-    /*
-     * Purpose:
-     * 	back to login page
-     * Parameters:
-     * 	I - Event event							button clicked
-     * Returns:
-     * 	void
-     * Notes:
-     * 	Used in case user accidently presses Create New Account
+    /**
+     * Reverts from the "Create New Account" page to the Login page.
+     *
+     * @param event The Back button is clicked.
      */
     public void buttonBackClicked(Event event) {
         //make login prompt buttons visible
@@ -210,15 +179,10 @@ public class LoginController {
         buttonBack.visibleProperty().setValue(false);
     }
 
-    /*
-     * Purpose:
-     * 	Checks to see what current id number is at
-     * Parameters:
-     * 	None
-     * Returns:
-     * 	int current id number
-     * Notes:
-     * 	Used to create new Account with id + 1
+    /**
+     * Checks the current set of account IDs. Creates a new account ID.
+     *
+     * @return num A new account ID that is the current largest ID incremented.
      */
     public int getIDCurrentNumberOfAccounts() {
         int num = 0;

@@ -15,13 +15,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.ArrayList;
 
-/*		Admin Class
- *
- * 		Purpose:
- *
- * 		Notes:
- *
- *
+/**
+ * Controller class that handles all events associated with the Admin page.
  */
 public class AdminController {
 
@@ -51,23 +46,20 @@ public class AdminController {
     @FXML javafx.scene.control.Label labelAdmin3;
 
     //Methods
-    /*
-     * Purpose:
-     * 	Handles event for when admin kiosk button is clicked (loads Products or Accounts onto screen)
-     * Parameters:
-     * 	I - Event event							button clicked
-     * Returns:
-     * 	void
-     * Notes:
-     *  Will load Kiosk
+
+    /**
+     * Switches the current view from the Admin page to the Kiosk page.
+     *
+     * @param event The Kiosk button is clicked.
      */
     public void buttonAdminKioskClicked(Event event) {
         //load Kiosk.fxml
-        Parent kiosk = null;
+        Parent kiosk;
         try {
             kiosk = FXMLLoader.load(getClass().getResource("../view/Kiosk.fxml"));
         } catch (IOException e) {
             e.printStackTrace();
+            return;
         }
         Scene sScene = new Scene(kiosk);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -76,23 +68,19 @@ public class AdminController {
         window.show();
     }
 
-    /*
-     * Purpose:
-     * 	Handles event for when admin employee button is clicked (loads Products or Accounts onto screen)
-     * Parameters:
-     * 	I - Event event							button clicked
-     * Returns:
-     * 	void
-     * Notes:
-     *  Will load Employee
+    /**
+     * Switches the current view from the Admin page to the Employee page.
+     *
+     * @param event The Employee button is clicked.
      */
     public void buttonAdminEmployeeClicked(Event event) {
         //load Employee.fxml
-        Parent kiosk = null;
+        Parent kiosk;
         try {
             kiosk = FXMLLoader.load(getClass().getResource("../view/Employee.fxml"));
         } catch (IOException e) {
             e.printStackTrace();
+            return;
         }
         Scene sScene = new Scene(kiosk);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -101,15 +89,10 @@ public class AdminController {
         window.show();
     }
 
-    /*
-     * Purpose:
-     * 	Handles event for when admin load button is clicked (loads Products or Accounts onto screen)
-     * Parameters:
-     * 	I - Event event							button clicked
-     * Returns:
-     * 	void
-     * Notes:
-     *  Will load textArea based on radio buttons
+    /**
+     * Loads either all product or account data based on the selected radio button.
+     *
+     * @param event The Load button is clicked.
      */
     public void buttonAdminLoadClicked(Event event) {
         //check what admin wants displayed
@@ -136,15 +119,10 @@ public class AdminController {
         }
     }
 
-    /*
-     * Purpose:
-     * 	Handles event for when admin add product menu button is clicked (loads Products or Accounts onto screen)
-     * Parameters:
-     * 	I - Event event							button clicked
-     * Returns:
-     * 	void
-     * Notes:
+    /**
+     * Displays the view for adding a new product.
      *
+     * @param event The "Add Product" menu option is selected.
      */
     public void menuButtonAddProductClicked(Event event) {
         //set add button to visible and opposing to invisible
@@ -176,15 +154,11 @@ public class AdminController {
         textFieldAdmin3.setText("");
     }
 
-    /*
-     * Purpose:
-     * 	Handles event for when admin add account menu button is clicked (loads Products or Accounts onto screen)
-     * Parameters:
-     * 	I - Event event							button clicked
-     * Returns:
-     * 	void
-     * Notes:
+
+    /**
+     * Displays the view for adding a new account.
      *
+     * @param event The "Add Account" menu option is selected
      */
     public void menuButtonAddAccountClicked(Event event) {
         //set add button to visible and opposing to invisible
@@ -217,20 +191,15 @@ public class AdminController {
         textFieldAdmin3.setText("");
     }
 
-    /*
-     * Purpose:
-     * 	Handles event for when admin add product button is clicked (loads Products or Accounts onto screen)
-     * Parameters:
-     * 	I - Event event							button clicked
-     * Returns:
-     * 	void
-     * Notes:
+    /**
+     * Adds a new product to the inventory based on the data provided by the user.
      *
+     * @param event The "Add Product" button is clicked.
      */
     public void buttonAdminAddProductClicked(Event event) {
         String setText = "";
-        Double price = null;
-        Integer count = null;
+        Double price;
+        Integer count;
         //clear area on each new add run
         textAreaAdmin.setText(setText);
         //Make sure none of the product fields are empty when adding new product
@@ -276,15 +245,10 @@ public class AdminController {
         }
     }
 
-    /*
-     * Purpose:
-     * 	Handles event for when admin add account button is clicked (loads Products or Accounts onto screen)
-     * Parameters:
-     * 	I - Event event							button clicked
-     * Returns:
-     * 	void
-     * Notes:
+    /**
+     * Adds a new account based on the data provided by the user.
      *
+     * @param event The "Add Account" button is clicked.
      */
     public void buttonAdminAddAccountClicked(Event event) {
         String setText = "";
@@ -324,23 +288,19 @@ public class AdminController {
         }
     }
 
-    /*
-     * Purpose:
-     * 	Handles event for when admin logout button is clicked (loads Products or Accounts onto screen)
-     * Parameters:
-     * 	I - Event event							button clicked
-     * Returns:
-     * 	void
-     * Notes:
-     *  Returns user to login page
+    /**
+     * Logs out the user; switches the current view to the login page.
+     *
+     * @param event The Logout button is clicked.
      */
     public void buttonAdminLogoutClicked(Event event) {
         //load Login.fxml
-        Parent kiosk = null;
+        Parent kiosk;
         try {
             kiosk = FXMLLoader.load(getClass().getResource("../view/Login.fxml"));
         } catch (IOException e) {
             e.printStackTrace();
+            return;
         }
         Scene sScene = new Scene(kiosk);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();

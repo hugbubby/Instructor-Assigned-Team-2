@@ -16,13 +16,10 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.Set;
 
-/*		Kiosk Class
+/**
+ * Controller class that handles all the events associated with the Kiosk page.
  *
- * 		Purpose:
- *
- * 		Notes:
- *
- *
+ * @author
  */
 public class KioskController {
 
@@ -58,15 +55,10 @@ public class KioskController {
     private int iPosition;                                            //used to tell the position of display of Products on screen (i.e. which page)
 
     //Constructors
-    /*
-     * Purpose:
-     * 	Loads all Products (inventory/stock) and loads first page of Products
-     * Parameters:
-     * 	None
-     * Returns:
-     * 	None
-     * Notes:
-     * 	Runs on Kiosk load
+
+    /**
+     * Loads all product information for the Kiosk page.
+     * Loads the first page of products.
      */
     public void initialize() {
         bSearch = false;
@@ -84,15 +76,11 @@ public class KioskController {
     }
 
     //Methods
-    /*
-     * Purpose:
-     * 	Handles event for when kiosk admin button is clicked (loads Products or Accounts onto screen)
-     * Parameters:
-     * 	I - Event event							button clicked
-     * Returns:
-     * 	void
-     * Notes:
-     *  Will load Admin page
+
+    /**
+     * Switches the current view from the Kiosk page to the Admin page.
+     *
+     * @param event The "Admin" button is clicked.
      */
     public void buttonKioskAdminPageClicked(Event event) {
         //load Admin.fxml
@@ -109,15 +97,10 @@ public class KioskController {
         window.show();
     }
 
-    /*
-     * Purpose:
-     * 	Handles event for when kiosk employee button is clicked (loads Products or Accounts onto screen)
-     * Parameters:
-     * 	I - Event event							button clicked
-     * Returns:
-     * 	void
-     * Notes:
-     *  Will load Employee page
+    /**
+     * Switches the current view from the Kiosk page to the Employee page.
+     *
+     * @param event The Employee button is clicked.
      */
     public void buttonKioskEmployeePageClicked(Event event) {
         //load Employee.fxml
@@ -134,15 +117,10 @@ public class KioskController {
         window.show();
     }
 
-    /*
-     * Purpose:
-     * 	Handles event for when kiosk logout button is clicked (loads Products or Accounts onto screen)
-     * Parameters:
-     * 	I - Event event							button clicked
-     * Returns:
-     * 	void
-     * Notes:
-     *  Returns user to login page
+    /**
+     * Logs out the user; switches the current view from the Kiosk page to the Login page.
+     *
+     * @param event
      */
     public void buttonKioskLogoutClicked(Event event) {
         //load Login.fxml
@@ -159,16 +137,10 @@ public class KioskController {
         window.show();
     }
 
-    /*
-     * Purpose:
-     * 	Handles event for when kiosk homw button is clicked (loads Products or Accounts onto screen)
-     * Parameters:
-     * 	I - Event event							button clicked
-     * Returns:
-     * 	void
-     * Notes:
-     *  Returns to the first page of inventory and clears search
-     *  does not clar cart
+    /**
+     * Takes the user back to the first page of products.
+     *
+     * @param event The Home button is clicked.
      */
     public void buttonKioskHomeClicked(Event event) {
         bSearch = false;
@@ -179,16 +151,10 @@ public class KioskController {
         loadProducts(alInventory);
     }
 
-    /*
-     * Purpose:
-     * 	Handles event for when next button is clicked (loads Products onto screen)
-     * Parameters:
-     * 	I - Event event							button clicked
-     * Returns:
-     * 	void
-     * Notes:
-     * 	Next page button will go until end and then
-     *  Previous button will show up
+    /**
+     * Takes the user to the next page of products.
+     *
+     * @param event The Next button is clicked.
      */
     public void buttonNextPageClicked(Event event) {
         //make previous page button visible
@@ -196,15 +162,8 @@ public class KioskController {
         loadProducts(alInventory);
     }
 
-    /*
-     * Purpose:
-     * 	Handles event for when previous button is clicked (loads Products onto screen)
-     * Parameters:
-     * 	I - Event event							button clicked
-     * Returns:
-     * 	void
-     * Notes:
-     *  Previous button will show up after next button is clicked
+    /**
+     * Directs the user to the previous page of products.
      */
     public void buttonPreviousPageClicked() {
         //make next page button visible
@@ -219,16 +178,10 @@ public class KioskController {
         loadProducts(alInventory);
     }
 
-    /*
-     * Purpose:
-     * 	Handles event for when search button is clicked (loads search relevant Products onto screen)
-     * Parameters:
-     * 	I - Event event							button clicked
-     * Returns:
-     * 	void
-     * Notes:
-     * 	Will use a search method in inventroy to load relevant Products
-     * 	Search is based off Products description
+    /**
+     * Performs a search for certain products in the inventory based on user input provided in the "search" text area.
+     *
+     * @param event The Search button is clicked.
      */
     public void buttonKioskSearchClicked(Event event) {
         if (textFieldKioskSearch.getText().equals("")) {
@@ -246,16 +199,11 @@ public class KioskController {
         }
     }
 
-    /*
-     * Purpose:
-     * 	Handles event for when any of the add to cart buttons are clicked
-     * Parameters:
-     * 	I - Event event							button clicked
-     * Returns:
-     * 	void
-     * Notes:
-     *  Will check which button was clicked and then will add the product at that button to cart
-     *  decrements stock count for Product (TEMPORARY (doesnt change files like buy button))
+    /**
+     * Adds a specific item to the user's cart.
+     * Decrements the stock for that specific product.
+     *
+     * @param event The "Add to Cart" button is clicked.
      */
     public void buttonAddToCartClicked(Event event) {
         //set clear and buy buttons to visible since items are in cart
@@ -354,15 +302,10 @@ public class KioskController {
         textAreaCart.setText(cart.toString());
     }
 
-    /*
-     * Purpose:
-     * 	Handles event for when clear cart button is clicked
-     * Parameters:
-     * 	I - Event event							button clicked
-     * Returns:
-     * 	void
-     * Notes:
-     *  Clears the cart and doesn't mess with any of the inventory
+    /**
+     * Clears the user's cart of all products had been added to it.
+     *
+     * @param event The "Clear Cart" button is clicked.
      */
     public void buttonClearCartClicked(Event event) {
         //simply reload Kiosk
@@ -380,16 +323,11 @@ public class KioskController {
         window.show();
     }
 
-    /*
-     * Purpose:
-     * 	Handles event for when buy button is clicked
-     * Parameters:
-     * 	I - Event event							button clicked
-     * Returns:
-     * 	void
-     * Notes:
-     *  Clears the cart and subtracts inventory
-     *  changes files
+    /**
+     * Handles the event that user buys the products currently in their cart.
+     * The user's cart is cleared and the Kiosk's inventory is updated accordingly.
+     *
+     * @param event The Buy button is clicked.
      */
     public void buttonBuyClicked(Event event) {
         //handle inventory
@@ -412,15 +350,10 @@ public class KioskController {
         textAreaCart.setText("Thank You For Your Purchase!\n Amount Paid: " + totalCost[totalCost.length - 1]);
     }
 
-    /*
-     * Purpose:
-     * 	Loads Product to kiosk page based on postion of int iPosition
-     * Parameters:
-     * 	None
-     * Returns:
-     * 	void
-     * Notes:
-     * 	Controlled by Next page button and Previous page button
+    /**
+     * Loads a specific page of products.
+     *
+     * @param inventory An ArrayList containing all products.
      */
     private void loadProducts(ArrayList<Product> inventory) {
         boolean end = false;
@@ -552,15 +485,11 @@ public class KioskController {
         }
     }
 
-    /*
-     * Purpose:
-     * 	Used for loading product information into text area
-     * Parameters:
-     * 	ArrayList<Products>						//inventory being used
-     * Returns:
-     * 	String print of the products information
-     * Notes:
+    /**
+     * Provides textual representation of the inventory.
      *
+     * @param inventory An ArrayList containing all products.
+     * @return - A String representation of all products with their corresponding information.
      */
     private String printProduct(ArrayList<Product> inventory) {
         return inventory.get(iPosition).toString() + "\nIn Stock: " + IKiosk.getStockCount(inventory.get(iPosition).getId());

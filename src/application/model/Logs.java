@@ -8,20 +8,18 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-/*		Logs Class
- *
- * 		Purpose:
- *
- * 		Notes:
- *
- *
+/**
+ * Logs stores a list of all of the Kiosk's accounts.
  */
 public class Logs {
 
-    //PIV
     private final ArrayList<Account> alLogs = new ArrayList<>();    //list of all the accounts in file
 
     //Constructors
+
+    /**
+     * Loads the account data from the application's files.
+     */
     public Logs() {
         //read from Accounts.txt file and load all Accounts
         try {
@@ -41,31 +39,24 @@ public class Logs {
     }
 
     //Methods
-    /*
-     * Purpose:
-     * 	Used by Admins to create new employees
-     * 	Used by LoginController for new customers
-     * Parameters:
+
+    /**
+     * Retrieves the list of all of the Kiosk's accounts.
      *
-     * Returns:
-     * 	Account being added to system
-     * Notes:
-     * 	changes files
+     * @return alLogs An ArrayList containing all of the Kiosk's Accounts.
      */
     public ArrayList<Account> getAccounts() {
         return alLogs;
     }
 
-    /*
-     * Purpose:
-     * 	Used by Admins to create new employees
-     * 	Used by LoginController for new customers
-     * Parameters:
+    /**
+     * Creates a new account based on user input. Updates the data in the application's files.
      *
-     * Returns:
-     * 	Account being added to system
-     * Notes:
-     * 	changes files
+     * @param id       The new Account's given ID.
+     * @param type     The new Account's given type.
+     * @param username The new Account's given username.
+     * @param password The new Account's given password.
+     * @return - Returns an Account object or null based on whether the Account was successfully created.
      */
     public Account addNewAccount(int id, int type, String username, String password) {
         //make sure account doesn't already exist
@@ -93,17 +84,11 @@ public class Logs {
         return accountTemp;
     }
 
-    /*
-     * Purpose:
-     * 	Checks to see is Account exists
-     * Parameters:
-     * 	I - String username						username of Account
-     *  I - String password						passwrod of Account
-     * Returns:
-     * 	Account is exists
-     * 	null is Account doesn't exist
-     * Notes:
-     * 	Used by login and creatNewAccoutn
+    /**
+     * Verifies that a specified Account exists.
+     *
+     * @param username The specified Account's username.
+     * @return - An Account object or null based on whether the Account was found.
      */
     public Account accountExists(String username) {
         for (Account aTemp : alLogs) {
@@ -114,7 +99,9 @@ public class Logs {
         return null;
     }
 
-    //toString
+    /**
+     * Provides a textual representation of the logs.
+     */
     public String toString() {
         String setText = "";
         for (Account alLog : alLogs) {

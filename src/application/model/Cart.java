@@ -5,13 +5,8 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
-/*		Cart Class
- *
- * 		Purpose:
- *
- * 		Notes:
- *
- *
+/**
+ * Cart uses a HashMap to store a user's chosen products and their corresponding IDs.
  */
 public class Cart {
 
@@ -23,15 +18,12 @@ public class Cart {
 
     //Constructors
     //Methods
-    /*
-     * Purpose:
-     * 	User adds a Product to their cart for purcahse later
-     * Parameters:
-     * 	I - Integer id							id number for the Product
-     * Returns:
-     * 	Product being added to cart
-     * Notes:
+
+    /**
+     * Adds the specified product to the cart.
      *
+     * @param product A Product object containing the added product's attributes.
+     * @return product The Product object to confirm its addition to the cart.
      */
     public void addToCart(Product product) {
         //add product to cart and increment count in cart
@@ -43,21 +35,18 @@ public class Cart {
         }
     }
 
-    /*
-     * Purpose:
-     * 	Used by the buy function to handle all items in cart
-     * Parameters:
-     * 	none
-     * Returns:
-     * 	Map<Product, Integer>					all items in cart
-     * Notes:
-     * 	used by buy only
+    /**
+     * Retrieves the entire cart.
+     *
+     * @return mpCart A HashMap containing all the products with their corresponding IDs.
      */
     public Map<Product, Integer> getCart() {
         return mpCart;
     }
 
-    //toString
+    /**
+     * Provides a textual representation of all of the cart's contents.
+     */
     public String toString() {
         StringBuilder strCart = new StringBuilder();
         Set<Product> keys = mpCart.keySet();

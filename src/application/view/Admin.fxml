@@ -3,72 +3,75 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="800.0" prefWidth="800.0"
-            xmlns="http://javafx.com/javafx/2.2" fx:controller="application.controller.AdminController">
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="600.0" prefWidth="800.0"
+            style="-fx-background-color: lavender;" xmlns="http://javafx.com/javafx/8.0.51"
+            fx:controller="application.controller.AdminController">
     <!-- TODO Add Nodes -->
-    <Label layoutX="14.0" layoutY="14.0" prefHeight="50.0" prefWidth="200.0" text="Admin">
-        <font>
-            <Font size="48.0"/>
-        </font>
-    </Label>
-    <TextArea fx:id="textAreaAdmin" layoutX="453.0" layoutY="14.0" prefHeight="772.0" prefWidth="333.0"
-              wrapText="true"/>
-    <RadioButton fx:id="rbProducts" layoutX="340.0" layoutY="682.0" mnemonicParsing="false"
-                 text="Display Products">
-        <toggleGroup>
-            <ToggleGroup fx:id="Display"/>
-        </toggleGroup>
-    </RadioButton>
-    <RadioButton id="rbProducts" fx:id="rbAccounts" layoutX="340.0" layoutY="710.0" mnemonicParsing="false"
-                 text="Display Accounts" toggleGroup="$Display"/>
-    <Button fx:id="buttonAdminLoad" layoutX="342.0" layoutY="744.0" mnemonicParsing="false"
-            onAction="#buttonAdminLoadClicked" prefHeight="42.0" prefWidth="108.0" text="Load">
-        <font>
-            <Font size="24.0" fx:id="x1"/>
-        </font>
-    </Button>
-    <Label fx:id="labelCustomer" layoutX="383.0" layoutY="14.0" text="0 - Customer" visible="false"/>
-    <Label fx:id="labelEmployee" layoutX="383.0" layoutY="38.0" text="1 - Employee" visible="false"/>
-    <Label fx:id="labelAdmin" layoutX="383.0" layoutY="62.0" text="2 - Admin" visible="false"/>
-    <Button id="button" fx:id="buttonAdminKiosk" font="$x1" layoutX="122.0" layoutY="689.0" mnemonicParsing="false"
-            onAction="#buttonAdminKioskClicked" prefHeight="30.0" prefWidth="100.0" text="Kiosk"/>
-    <Button id="button" fx:id="buttonAdminEmployee" font="$x1" layoutX="122.0" layoutY="744.0"
-            mnemonicParsing="false" onAction="#buttonAdminEmployeeClicked" prefHeight="42.0" prefWidth="146.0"
-            text="Employee"/>
-    <MenuButton layoutX="10.0" layoutY="78.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="108.0"
-                text="Menu">
-        <items>
-            <MenuItem mnemonicParsing="false" onAction="#menuButtonAddProductClicked" text="Add Product"
-                      fx:id="menuButtonAddProduct"/>
-            <MenuItem mnemonicParsing="false" onAction="#menuButtonAddAccountClicked" text="Add Account"
-                      fx:id="menuButtonAddAccount"/>
-        </items>
-    </MenuButton>
-    <Button id="buttonAdminAdd" fx:id="buttonAdminAddProduct" font="$x1" layoutX="14.0" layoutY="167.0"
-            mnemonicParsing="false" onAction="#buttonAdminAddProductClicked" prefHeight="38.0" prefWidth="100.0"
-            text="Add" visible="false"/>
-    <TextField id="textFieldAdmin" fx:id="textFieldAdmin0" layoutX="242.0" layoutY="167.0" prefWidth="200.0"
-               visible="false"/>
-    <TextField id="textFieldAdmin" fx:id="textFieldAdmin1" layoutX="242.0" layoutY="198.0" prefWidth="200.0"
-               visible="false"/>
-    <TextField fx:id="textFieldAdmin2" layoutX="242.0" layoutY="233.0" prefWidth="200.0" visible="false"/>
-    <Label fx:id="labelAdmin0" layoutX="122.0" layoutY="167.0" prefHeight="21.999900000002526" prefWidth="110.0"
-           text="***" visible="false"/>
-    <Label fx:id="labelAdmin1" layoutX="122.0" layoutY="198.0" prefHeight="21.999900000002526" prefWidth="110.0"
-           text="***" visible="false"/>
-    <Label fx:id="labelAdmin2" layoutX="122.0" layoutY="233.0" prefHeight="21.999900000002526" prefWidth="110.0"
-           text="***" visible="false"/>
-    <TextField id="textFieldAdmin2" fx:id="textFieldAdmin3" layoutX="242.0" layoutY="269.0" prefWidth="200.0"
-               visible="false"/>
-    <Label id="labelAdmin2" fx:id="labelAdmin3" layoutX="122.0" layoutY="269.0" prefHeight="21.999900000002526"
-           prefWidth="110.0" text="***" visible="false"/>
-    <Button id="buttonAdminAdd" fx:id="buttonAdminAddAccount" font="$x1" layoutX="14.0" layoutY="216.0"
-            mnemonicParsing="false" onAction="#buttonAdminAddAccountClicked" prefHeight="38.0" prefWidth="100.0"
-            text="Add" visible="false"/>
-    <Button fx:id="buttonAdminLogout" layoutX="14.0" layoutY="744.0" mnemonicParsing="false"
-            onAction="#buttonAdminLogoutClicked" prefHeight="42.0" prefWidth="80.0" text="Logout">
-        <font>
-            <Font size="14.0"/>
-        </font>
-    </Button>
+    <children>
+        <Label layoutX="14.0" layoutY="14.0" prefHeight="50.0" prefWidth="200.0" text="Admin">
+            <font>
+                <Font size="48.0"/>
+            </font>
+        </Label>
+        <TextArea fx:id="textAreaAdmin" layoutX="453.0" layoutY="14.0" prefHeight="590.0" prefWidth="333.0"
+                  wrapText="true"/>
+        <RadioButton fx:id="rbProducts" layoutX="329.0" layoutY="493.0" mnemonicParsing="false" selected="false"
+                     text="Display Products">
+            <toggleGroup>
+                <ToggleGroup fx:id="Display"/>
+            </toggleGroup>
+        </RadioButton>
+        <RadioButton id="rbProducts" fx:id="rbAccounts" layoutX="329.0" layoutY="517.0" mnemonicParsing="false"
+                     text="Display Accounts" toggleGroup="$Display"/>
+        <Button fx:id="buttonAdminLoad" layoutX="329.0" layoutY="554.0" mnemonicParsing="false"
+                onAction="#buttonAdminLoadClicked" prefHeight="42.0" prefWidth="108.0" text="Load">
+            <font>
+                <Font size="24.0" fx:id="x1"/>
+            </font>
+        </Button>
+        <Label fx:id="labelCustomer" layoutX="383.0" layoutY="14.0" text="0 - Customer" visible="false"/>
+        <Label fx:id="labelEmployee" layoutX="383.0" layoutY="38.0" text="1 - Employee" visible="false"/>
+        <Label fx:id="labelAdmin" layoutX="383.0" layoutY="62.0" text="2 - Admin" visible="false"/>
+        <Button id="button" fx:id="buttonAdminKiosk" font="$x1" layoutX="142.0" layoutY="494.0" mnemonicParsing="false"
+                onAction="#buttonAdminKioskClicked" prefHeight="30.0" prefWidth="100.0" text="Kiosk"/>
+        <Button id="button" fx:id="buttonAdminEmployee" font="$x1" layoutX="133.0" layoutY="554.0"
+                mnemonicParsing="false" onAction="#buttonAdminEmployeeClicked" prefHeight="42.0" prefWidth="146.0"
+                text="Employee"/>
+        <MenuButton layoutX="10.0" layoutY="78.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="108.0"
+                    text="Menu">
+            <items>
+                <MenuItem fx:id="menuButtonAddProduct" mnemonicParsing="false" onAction="#menuButtonAddProductClicked"
+                          text="Add Product"/>
+                <MenuItem fx:id="menuButtonAddAccount" mnemonicParsing="false" onAction="#menuButtonAddAccountClicked"
+                          text="Add Account"/>
+            </items>
+        </MenuButton>
+        <Button id="buttonAdminAdd" fx:id="buttonAdminAddProduct" font="$x1" layoutX="14.0" layoutY="167.0"
+                mnemonicParsing="false" onAction="#buttonAdminAddProductClicked" prefHeight="38.0" prefWidth="100.0"
+                text="Add" visible="false"/>
+        <TextField id="textFieldAdmin" fx:id="textFieldAdmin0" layoutX="242.0" layoutY="167.0" prefWidth="200.0"
+                   visible="false"/>
+        <TextField id="textFieldAdmin" fx:id="textFieldAdmin1" layoutX="242.0" layoutY="198.0" prefWidth="200.0"
+                   visible="false"/>
+        <TextField fx:id="textFieldAdmin2" layoutX="242.0" layoutY="233.0" prefWidth="200.0" visible="false"/>
+        <Label fx:id="labelAdmin0" layoutX="122.0" layoutY="167.0" prefHeight="21.999900000002526" prefWidth="110.0"
+               text="***" visible="false"/>
+        <Label fx:id="labelAdmin1" layoutX="122.0" layoutY="198.0" prefHeight="21.999900000002526" prefWidth="110.0"
+               text="***" visible="false"/>
+        <Label fx:id="labelAdmin2" layoutX="122.0" layoutY="233.0" prefHeight="21.999900000002526" prefWidth="110.0"
+               text="***" visible="false"/>
+        <TextField id="textFieldAdmin2" fx:id="textFieldAdmin3" layoutX="242.0" layoutY="269.0" prefWidth="200.0"
+                   visible="false"/>
+        <Label id="labelAdmin2" fx:id="labelAdmin3" layoutX="122.0" layoutY="269.0" prefHeight="21.999900000002526"
+               prefWidth="110.0" text="***" visible="false"/>
+        <Button id="buttonAdminAdd" fx:id="buttonAdminAddAccount" font="$x1" layoutX="14.0" layoutY="216.0"
+                mnemonicParsing="false" onAction="#buttonAdminAddAccountClicked" prefHeight="38.0" prefWidth="100.0"
+                text="Add" visible="false"/>
+        <Button fx:id="buttonAdminLogout" layoutX="24.0" layoutY="556.0" mnemonicParsing="false"
+                onAction="#buttonAdminLogoutClicked" prefHeight="42.0" prefWidth="80.0" text="Logout">
+            <font>
+                <Font size="14.0"/>
+            </font>
+        </Button>
+    </children>
 </AnchorPane>

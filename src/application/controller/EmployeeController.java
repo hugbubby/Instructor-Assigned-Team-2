@@ -11,13 +11,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-/*		Employee Class
- *
- * 		Purpose:
- *
- * 		Notes:
- *
- *
+/**
+ * Controller class that handles all events associated with the Employee page.
  */
 public class EmployeeController {
 
@@ -31,16 +26,10 @@ public class EmployeeController {
     @FXML javafx.scene.control.TextField textFieldEmployeeProductId;
     @FXML javafx.scene.control.TextField textFieldEmployeeStockAmount;
 
-    //Constructors
-    /*
-     * Purpose:
-     *
-     * Parameters:
-     * 	None
-     * Returns:
-     * 	None
-     * Notes:
-     * 	Runs on Employee load
+    //Methods
+
+    /**
+     * Loads the content of the Employee page.
      */
     public void initialize() {
         //populate text area with Products
@@ -51,16 +40,10 @@ public class EmployeeController {
             buttonEmployeeAdminPage.visibleProperty().set(true);
     }
 
-    //Methods
-    /*
-     * Purpose:
-     * 	Handles event for when employee admin button is clicked (loads Products or Accounts onto screen)
-     * Parameters:
-     * 	I - Event event							button clicked
-     * Returns:
-     * 	void
-     * Notes:
-     *  Will load Admin
+    /**
+     * Switches the current view from the Employee to the Admin page.
+     *
+     * @param event the Admin button is clicked.
      */
     public void buttonEmployeeAdminPageClicked(Event event) {
         //load Admin.fxml
@@ -77,15 +60,10 @@ public class EmployeeController {
         window.show();
     }
 
-    /*
-     * Purpose:
-     * 	Handles event for when employee kiosk button is clicked (loads Products or Accounts onto screen)
-     * Parameters:
-     * 	I - Event event							button clicked
-     * Returns:
-     * 	void
-     * Notes:
-     *  Will load Kiosk
+    /**
+     * Switched the current view from the Employee page to the Kiosk page.
+     *
+     * @param event The Kiosk button is clicked.
      */
     public void buttonEmployeeKioskPageClicked(Event event) {
         //load Kiosk.fxml
@@ -102,15 +80,10 @@ public class EmployeeController {
         window.show();
     }
 
-    /*
-     * Purpose:
-     * 	Handles event for when employee logout button is clicked (loads Products or Accounts onto screen)
-     * Parameters:
-     * 	I - Event event							button clicked
-     * Returns:
-     * 	void
-     * Notes:
-     *  Returns user to login page
+    /**
+     * Logs out the employee; switches the view to the Login page.
+     *
+     * @param event The logout button is clicked.
      */
     public void buttonEmployeeLogoutClicked(Event event) {
         //load Login.fxml
@@ -127,15 +100,10 @@ public class EmployeeController {
         window.show();
     }
 
-    /*
-     * Purpose:
-     * 	Handles event for when restock button is clicked (loads Products or Accounts onto screen)
-     * Parameters:
-     * 	I - Event event							button clicked
-     * Returns:
-     * 	void
-     * Notes:
-     *  Adds stock amount add to current stock number for Product
+    /**
+     * Adds to the current stock of a specific product based on user input.
+     *
+     * @param event The Restock button is clicked.
      */
     public void buttonRestockClicked(Event event) {
         Integer amount = null;
